@@ -9,7 +9,29 @@
 <body>
 <!-- Display the countdown timer in an element -->
 <div class="container-fluid" id="bigImg">
-        <h1 class="text-center"  id="demo"></h1>
+    <div class="row">
+        <div class="header col-lg-12">
+            <h1 class="text-center">This is how long til I see You</h1>
+        </div>
+    </div>
+        <div class="row clock">
+            <div class="col-lg-3">
+                <h1 class="text-center"  id="days">0</h1>
+                <h2 class="text-center">Days</h2>
+            </div>
+            <div class="col-lg-3">
+                <h1 class="text-center"  id="hours">0</h1>
+                <h2 class="text-center">Hours</h2>
+            </div>
+            <div class="col-lg-3">
+                <h1 class="text-center"  id="minutes">0</h1>
+                <h2 class="text-center">Minutes</h2>
+            </div>
+            <div class="col-lg-3">
+                <h1 class="text-center"  id="seconds">0</h1>
+                <h2 class="text-center">Seconds</h2>
+            </div>
+        </div>
 </div>
 <script>
     // Set the date we're counting down to
@@ -31,9 +53,10 @@
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
